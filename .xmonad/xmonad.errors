@@ -1,0 +1,9 @@
+$ ghc --make xmonad.hs -i -ilib -fforce-recomp -main-is main -dynamic -v0 -outputdir /home/akai/.xmonad/build-x86_64-linux -o /home/akai/.xmonad/xmonad-x86_64-linux
+
+xmonad.hs:332:57: warning: [-Wdeprecations]
+    In the use of ‘fullscreenEventHook’
+    (imported from XMonad.Hooks.EwmhDesktops):
+    Deprecated: "Use ewmhFullscreen instead."
+    |
+332 | , handleEventHook    = handleEventHook myBaseConfig <+> fullscreenEventHook
+    |                                                         ^^^^^^^^^^^^^^^^^^^

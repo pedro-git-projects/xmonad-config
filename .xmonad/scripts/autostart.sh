@@ -9,17 +9,17 @@ function run {
 
 (sleep 2; run $HOME/.config/polybar/launch.sh) &
 
-#change your keyboard if you need it
-#setxkbmap -layout be
+#cursor active at boot
+xsetroot -cursor_name left_ptr &
 
 #starting utility applications at boot time
 run nm-applet &
 run cbatticon & 
 run xfce4-power-manager &
-run volumeicon &
+run volctl &
 run unclutter &
 run keepassxc &
-run feh --bg-fill /home/akai/Pictures/wallpapers/berserk.png &
+run feh --bg-fill $HOME/Pictures/wallpapers/haskell.png &
 numlockx on &
 blueberry-tray &
 picom --config $HOME/.xmonad/scripts/picom.conf &
