@@ -27,7 +27,7 @@ import XMonad.Layout.ThreeColumns
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.IndependentScreens
-
+import XMonad.Actions.UpdatePointer
 
 import XMonad.Layout.CenteredMaster(centerMaster)
 
@@ -135,7 +135,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   [ ((modMask, xK_p), spawn $ "rofi -show drun" )
   , ((modMask, xK_x), spawn $ "archlinux-logout" )
-  , ((modMask, xK_o), spawn $ "librewolf-bin" )
+  , ((modMask, xK_o), spawn $ "firefox" )
   , ((modMask, xK_Up), spawn $ "pamixer -i 5" )
   , ((modMask, xK_Down), spawn $ "pamixer -d 5" )
   , ((modMask, xK_s), spawn $ "spotify-tray" )
@@ -330,7 +330,8 @@ main = do
 , modMask = myModMask
 , borderWidth = myBorderWidth
 , handleEventHook    = handleEventHook myBaseConfig <+> fullscreenEventHook
-, focusFollowsMouse = myFocusFollowsMouse
+--, focusFollowsMouse = myFocusFollowsMouse
+, logHook = updatePointer (0.5, 0.5) (0, 0)
 , workspaces = myWorkspaces
 , focusedBorderColor = focdBord
 , normalBorderColor = normBord
